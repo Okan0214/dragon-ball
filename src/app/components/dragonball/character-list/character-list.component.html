@@ -1,0 +1,19 @@
+<h3>{{listName()}}</h3>
+        <ul class="list-group mt-2">
+        @for (personaje of characters(); track personaje.id;let idx = $index) {
+            @if (personaje.power>100) {
+            <li>
+                <span>{{idx+1}} - {{ personaje.name }} </span>
+                <strong
+                
+                
+                
+                [class.text-danger]="personaje.power>9000"
+                [class.text-primary]="personaje.power<9000"
+                >
+                ({{personaje.power}})</strong>
+            </li>
+        }
+        }
+        
+        </ul>
